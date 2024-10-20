@@ -75,7 +75,7 @@ Con ese fichero la aplicación es capaz de realizar dos tareas:
 
 5. **class Inicilizador:**
 
-Una clase para que se utilizará para conseguir una instancia del jugador que quiera el usuario, para ello heredara la clase Estadisticas
+Una clase que se utilizará para conseguir una instancia del jugador que quiera el usuario, para ello heredara la clase Estadisticas
 
    a. Input: 
    
@@ -88,8 +88,8 @@ Una clase para que se utilizará para conseguir una instancia del jugador que qu
        - inicializar_jugador --> pregunta al usuario que introduzca el nombre del jugador que quiere analizar, y crea una instancia con las estadisticas de ese jugador
        - Exceptiones: (si no se cumplen la aplicación le volvera a pedir al usuario que introduzca otro nombre)
        
-               - para asegurar de que el jugador introduzido por el usuario se encuentra entre los datos
-               - para asegurar que los tiros intentados son mayor o igual que los anotados (para cada tipo de tiro)
+               - Para asegurar que el jugador introduzido por el usuario se encuentra entre los datos
+               - Para asegurar que los tiros intentados son mayor o igual que los anotados (para cada tipo de tiro)
                
        - efectividad --> compara el porcentaje de cada jugador para cada tipo de tiro, devuelve un diccionario donde: keys --> los tipos de tiro, values --> un string donde se indica que jugador es más efectivo o si son igual de efectivos en ese tipo de tiros
 
@@ -101,10 +101,10 @@ Para inicializar la aplicación:
 1. Se pide al usuario que introduzca el fichero que contiene los datos de los jugadores que quiere analizar --> se crea un dataframe con los datos del fichero
 2. Exceptions:
    
-       a. Para asegurar de que el fichero contiene todas las columnas necesarias
-       b. Para asegurar de que el fichero (su ruta) que ha introduzido es correcta
-       c. Para asegurar de el fichero existe
-       d. Para asegurar de que no este vacio
+       a. Para asegurar que el fichero contiene todas las columnas necesarias
+       b. Para asegurar que el fichero (su ruta) que ha introduzido es correcta
+       c. Para asegurar que el fichero existe
+       d. Para asegurar que el fichero no este vacio
    
 4. Utiliza la clase Inicializador con el dataframe del fichero
 5. La aplicacion dara tres opciones:
@@ -115,8 +115,8 @@ Para inicializar la aplicación:
   
 7. Excepctiones:
    
-       a. para asegurar de que el usuario introduce una de esas tres opciones
-       b. en el caso de la comparación, asegurar de que el usuario esta introduciendo dos nombres distintos
+       a. Para asegurar que el usuario introduce una de esas tres opciones
+       b. En el caso de la comparación, asegurar que el usuario esta introduciendo dos nombres distintos
 
 
  
