@@ -9,6 +9,8 @@ Jugador1, 10, 5, 8, 6, 15, 10, 2, 3, 4, 30, 1
 Con ese fichero la aplicación es capaz de realizar dos tareas:
 1. Mostras las estadísticas de un solo jugador, el que el usuario quiera.
 2. Comparar las estadísticas entre dos jugadores que el usuario quiera.
+
+En este repositorio hay un ficher jugadores.csv que es válido para probar la aplicación.
    
 ## Clases:
 1. **class Tiros:**
