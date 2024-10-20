@@ -10,7 +10,7 @@ Con ese fichero la aplicación es capaz de realizar dos tareas:
 1. Mostras las estadísticas de un solo jugador, el que el usuario quiera.
 2. Comparar las estadísticas entre dos jugadores que el usuario quiera.
 
-En este repositorio hay un ficher jugadores.csv que es válido para probar la aplicación.
+En este repositorio hay un fichero "jugadores.csv" que es válido para probar la aplicación.
    
 ## Clases:
 1. **class Tiros:**
