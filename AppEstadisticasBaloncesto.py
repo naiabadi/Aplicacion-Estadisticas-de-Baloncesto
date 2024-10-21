@@ -65,9 +65,9 @@ class Tiros:
 class Defensa:
     def __init__(self, **kwargs):
         self.__defensa = {
-            "tapones": kwargs.get("tapones", 0),
-            "robos": kwargs.get("robos", 0),
-            "rebotes": kwargs.get("rebotes", 0),
+            "Tapones": kwargs.get("Tapones", 0),
+            "Robos": kwargs.get("Robos", 0),
+            "Rebotes": kwargs.get("Rebotes", 0),
         }
 
     @property
@@ -87,9 +87,9 @@ class Defensa:
 
     def mostrar_defensa(self):
         return {
-            "Tapones": self.__defensa["tapones"],
-            "Robos": self.__defensa["robos"],
-            "Rebotes": self.__defensa["rebotes"],
+            "Tapones": self.__defensa["Tapones"],
+            "Robos": self.__defensa["Robos"],
+            "Rebotes": self.__defensa["Rebotes"],
         }
 
 class Estadisticas(Tiros, Defensa):
@@ -146,9 +146,9 @@ class Estadisticas(Tiros, Defensa):
             "Tiros de dos": self.porminuto(tiros["Tiros de dos"]),
             "Triples": self.porminuto(tiros["Triples"]),
             "Tiros de campo": self.porminuto(tiros["Tiros de campo"]),
-            "Tapones": self.porminuto(self.defensa["tapones"]),
-            "Robos": self.porminuto(self.defensa["robos"]),
-            "Rebotes": self.porminuto(self.defensa["rebotes"])
+            "Tapones": self.porminuto(self.defensa["Tapones"]),
+            "Robos": self.porminuto(self.defensa["Robos"]),
+            "Rebotes": self.porminuto(self.defensa["Rebotes"])
         }
         return estadisticas
 
@@ -160,9 +160,9 @@ class Estadisticas(Tiros, Defensa):
             "Tiros de dos": self.proyeccion(tiros["Tiros de dos"]),
             "Triples": self.proyeccion(tiros["Triples"]),
             "Tiros de campo": self.proyeccion(tiros["Tiros de campo"]),
-            "Tapones": self.proyeccion(self.defensa["tapones"]),
-            "Robos": self.proyeccion(self.defensa["robos"]),
-            "Rebotes": self.proyeccion(self.defensa["rebotes"])
+            "Tapones": self.proyeccion(self.defensa["Tapones"]),
+            "Robos": self.proyeccion(self.defensa["Robos"]),
+            "Rebotes": self.proyeccion(self.defensa["Rebotes"])
         }
         return estadisticas
 
@@ -226,9 +226,9 @@ class Comparar(Estadisticas):
         defensa2 = self.__jugador2.defensa
 
         comparacion = {
-            "tapones": None,
-            "robos": None,
-            "rebotes": None
+            "Tapones": None,
+            "Robos": None,
+            "Rebotes": None
         }
 
         for key in comparacion.keys():
@@ -295,7 +295,7 @@ class Inicializador(Estadisticas):
                 prorrogas = int(jugador_fila["Prorrogas"].values[0])
                 part = 40.0 + (5 * float(prorrogas))
                 jugador = Estadisticas(nombre=nombre, minutos=min, partido=part, T3=triples, Tlibres=libres, T2=dedos,
-                                    tapones=tap, robos=rob, rebotes=reb)
+                                    Tapones=tap, Robos=rob, Rebotes=reb)
                 return jugador
             except ValueError as e:
                 print(f"Error: {e}. Intenta de nuevo.")
@@ -338,8 +338,7 @@ if __name__ == "__main__":
         if x == 1:
             jugador = inicializador.inicializar_jugador()
             for key in jugador.mostrar():
-                print(f"{key}:")
-                print(jugador.mostrar()[key])
+                print(f"{key}: {jugador.mostrar()[key]}")
         elif x == 2:
             try:
                 jugador1 = inicializador.inicializar_jugador()
@@ -354,9 +353,13 @@ if __name__ == "__main__":
 
                 comparacion = Comparar(jugador1, jugador2)
                 print("Comparación de ambos jugadores:")
-                print(comparacion.anotacion())
-                print("Efectividad en los tiros:",comparacion.efectividad())
-                print(comparacion.comparar_defensa())
+                print(f"1. Puntos: {comparacion.anotacion()}")
+                print("2. Efectividad en los tiros:")
+                for key in comparacion.efectividad():
+                    print(f"{key}: {comparacion.efectividad()[key]}")
+                print("3. Estadísticas defensivas:")
+                for key in comparacion.comparar_defensa():
+                    print(f"{key}: {comparacion.comparar_defensa()[key]}")
             except ValueError as e:
                 print(f"Error: {e}")
                 continue
